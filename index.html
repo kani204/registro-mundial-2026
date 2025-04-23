@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Mundial FIFA 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Registro de Equipos - Mundial FIFA 2026</h1>
+        <button id="boton-modo-oscuro">Modo Oscuro</button>
+    </header>
+    <main class="contenedor">
+        <div id="contenedor-formulario" class="contenedor-formulario">
+            <h2>Registrar Nuevo Equipo</h2>
+            <form id="formulario-registro">
+                <div class="campo-formulario">
+                    <label for="nombre-pais">Nombre del País:</label>
+                    <input type="text" id="nombre-pais" required>
+                </div>
+                <div class="campo-formulario">
+                    <label for="confederacion">Confederación:</label>
+                    <select id="confederacion">
+                        <option value="">Seleccionar</option>
+                        <option value="AFC">AFC</option>
+                        <option value="CAF">CAF</option>
+                        <option value="CONCACAF">CONCACAF</option>
+                        <option value="CONMEBOL">CONMEBOL</option>
+                        <option value="OFC">OFC</option>
+                        <option value="UEFA">UEFA</option>
+                    </select>
+                </div>
+                <div class="campo-formulario">
+                    <label for="grupo">Grupo:</label>
+                    <select id="grupo">
+                        <option value="">Seleccionar</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                    </select>
+                </div>
+                <div class="campo-formulario">
+                    <label for="entrenador">Entrenador Principal:</label>
+                    <input type="text" id="entrenador" required>
+                </div>
+                <div class="campo-formulario">
+                    <label for="anio-participacion">Año Primera Participación:</label>
+                    <input type="number" id="anio-participacion">
+                </div>
+                <div class="campo-formulario">
+                    <label for="cantidad-participaciones">Cantidad de Participaciones:</label>
+                    <input type="number" id="cantidad-participaciones">
+                </div>
+                <div class="campo-formulario">
+                    <label for="mejor-resultado">Mejor Resultado:</label>
+                    <select id="mejor-resultado">
+                        <option value="">Seleccionar</option>
+                        <option value="campeon">Campeón</option>
+                        <option value="subcampeon">Subcampeón</option>
+                        <option value="tercer-puesto">Tercer Puesto</option>
+                        <option value="cuarto-puesto">Cuarto Puesto</option>
+                        <option value="cuartos-final">Cuartos de Final</option>
+                        <option value="octavos-final">Octavos de Final</option>
+                        <option value="primera-fase">Primera Fase</option>
+                    </select>
+                </div>
+                <div class="campo-formulario">
+                    <label for="escudo-url">URL del Escudo:</label>
+                    <input type="url" id="escudo-url">
+                </div>
+                <div class="campo-formulario">
+                    <label for="bandera-url">URL de la Bandera:</label>
+                    <input type="url" id="bandera-url">
+                </div>
+                <div class="botones-formulario">
+                    <button type="submit" id="boton-guardar">Guardar Equipo</button>
+                    <button type="button" id="boton-cancelar">Cancelar</button>
+                    <input type="hidden" id="id-equipo">
+                </div>
+            </form>
+        </div>
+
+        <div id="contenedor-tabla" class="contenedor-tabla">
+            <h2>Equipos Registrados</h2>
+            <div class="filtros">
+                <label for="filtro-confederacion">Filtrar por Confederación:</label>
+                <select id="filtro-confederacion">
+                    <option value="">Todas</option>
+                    <option value="AFC">AFC</option>
+                    <option value="CAF">CAF</option>
+                    <option value="CONCACAF">CONCACAF</option>
+                    <option value="CONMEBOL">CONMEBOL</option>
+                    <option value="OFC">OFC</option>
+                    <option value="UEFA">UEFA</option>
+                </select>
+                <label for="filtro-grupo">Filtrar por Grupo:</label>
+                <select id="filtro-grupo">
+                    <option value="">Todos</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="H">H</option>
+                </select>
+                <label for="busqueda-pais">Buscar por País:</label>
+                <input type="text" id="busqueda-pais" placeholder="Ingresar nombre">
+            </div>
+            <table id="tabla-equipos">
+                <thead>
+                    <tr>
+                        <th data-columna="nombrePais">País</th>
+                        <th data-columna="confederacion">Confederación</th>
+                        <th data-columna="grupo">Grupo</th>
+                        <th data-columna="entrenador">Entrenador</th>
+                        <th data-columna="anioParticipacion">Año Participación</th>
+                        <th data-columna="cantidadParticipaciones">Participaciones</th>
+                        <th data-columna="mejorResultado">Mejor Resultado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla-equipos">
+                    <tr><td colspan="8">No hay equipos registrados.</td></tr>
+                </tbody>
+            </table>
+            <button id="boton-nuevo-equipo">Nuevo Equipo</button>
+        </div>
+
+        <div id="contenedor-estadisticas" class="contenedor-estadisticas">
+            <h2>Estadísticas</h2>
+            <p>Equipos por Confederación:</p>
+            <ul id="lista-equipos-por-confederacion"></ul>
+            <p>Promedio de Participaciones: <span id="promedio-participaciones">0</span></p>
+            <p>Equipos Campeones:</p>
+            <ul id="lista-campeones"></ul>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Registro Mundial FIFA 2026</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+/* Estilos generales (base) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #e0f7fa;
+    color: #263238;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el modo oscuro */
+}
+
+body.modo-oscuro {
+    background-color: #212121;
+    color: #eceff1;
+}
+
+body.modo-oscuro h2 {
+    color: #bb86fc; /* Un morado para destacar en oscuro */
+    border-bottom-color: #bb86fc;
+}
+
+body.modo-oscuro .contenedor-formulario,
+body.modo-oscuro .contenedor-tabla,
+body.modo-oscuro .contenedor-estadisticas {
+    background-color: #303030;
+    color: #eceff1;
+    border-color: #616161;
+}
+
+body.modo-oscuro .campo-formulario label {
+    color: #bb86fc;
+}
+
+body.modo-oscuro .campo-formulario input[type="text"],
+body.modo-oscuro .campo-formulario input[type="number"],
+body.modo-oscuro .campo-formulario input[type="url"],
+body.modo-oscuro .campo-formulario select {
+    background-color: #424242;
+    color: #eceff1;
+    border-color: #616161;
+}
+
+body.modo-oscuro #tabla-equipos th {
+    background-color: #bb86fc;
+    color: #212121;
+}
+
+body.modo-oscuro #tabla-equipos tbody tr:nth-child(even) {
+    background-color: #424242;
+}
+
+body.modo-oscuro #tabla-equipos tbody tr:hover {
+    background-color: #616161;
+}
+
+body.modo-oscuro .acciones-tabla button {
+    color: #212121;
+}
+
+body.modo-oscuro .contenedor-estadisticas h2 {
+    color: #00e5ff; /* Otro color para destacar en oscuro */
+    border-bottom-color: #00e5ff;
+}
+
+body.modo-oscuro footer {
+    background-color: #000;
+    color: #bbdefb;
+}
+
+header {
+    background-color: #00bcd4;
+    color: white;
+    padding: 1.5em 0;
+    text-align: center;
+    margin-bottom: 1.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 2em; /* Espacio a los lados para el botón y el título */
+}
+
+header h1 {
+    margin: 0;
+}
+
+#boton-modo-oscuro {
+    background-color: #673ab7; /* Un morado más oscuro */
+    color: white;
+    border: none;
+    padding: 0.8em 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#boton-modo-oscuro:hover {
+    background-color: #512da8; /* Un morado aún más oscuro */
+}
+
+.contenedor-tabla .filtros {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.contenedor-tabla .filtros label {
+    font-weight: bold;
+    color: #009688;
+}
+
+.contenedor-tabla .filtros select,
+.contenedor-tabla .filtros input[type="text"] {
+    padding: 0.7em;
+    border: 1px solid #80cbc4;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+/* Estilos específicos para el input de búsqueda */
+#busqueda-pais {
+    width: 200px;
+}
+
+/* Resto de los estilos (sin cambios importantes) */
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5em;
+}
+
+h2 {
+    color: #00bcd4;
+    margin-top: 1.5em;
+    border-bottom: 3px solid #00bcd4;
+    padding-bottom: 0.7em;
+}
+
+/* estilos del formulario */
+.contenedor-formulario {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+    border: 1px solid #b2ebf2;
+}
+
+.campo-formulario {
+    margin-bottom: 1.2em;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #009688;
+}
+
+.campo-formulario input[type="text"],
+.campo-formulario input[type="number"],
+.campo-formulario input[type="url"],
+.campo-formulario select {
+    width: calc(100% - 1em);
+    padding: 0.8em;
+    border: 1px solid #80cbc4;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.botones-formulario {
+    margin-top: 1.5em;
+    display: flex;
+    gap: 1em;
+    justify-content: flex-end;
+}
+
+.botones-formulario button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 1em 1.5em;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.botones-formulario button:hover {
+    background-color: #388e3c;
+}
+
+.botones-formulario button#boton-cancelar {
+    background-color: #f44336;
+}
+
+.botones-formulario button#boton-cancelar:hover {
+    background-color: #d32f2f;
+}
+
+/* estilos de la tabla */
+.contenedor-tabla {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    border: 1px solid #b2ebf2;
+}
+
+.contenedor-tabla .filtros {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.contenedor-tabla .filtros label {
+    font-weight: bold;
+    color: #009688;
+}
+
+.contenedor-tabla .filtros select,
+.contenedor-tabla .filtros input[type="text"] {
+    padding: 0.7em;
+    border: 1px solid #80cbc4;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+#tabla-equipos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#tabla-equipos th,
+#tabla-equipos td {
+    border: 1px solid #e0e0e0;
+    padding: 1em;
+    text-align: left;
+}
+
+#tabla-equipos th {
+    background-color: #00bcd4;
+    color: white;
+    font-weight: bold;
+}
+
+#tabla-equipos tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tabla-equipos tbody tr:hover {
+    background-color: #e0f2f1;
+}
+
+.acciones-tabla button {
+    background-color: #ffc107;
+    color: #263238;
+    border: none;
+    padding: 0.7em 1em;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    margin-right: 0.5em;
+    transition: background-color 0.3s ease;
+}
+
+.acciones-tabla button:hover {
+    background-color: #ffb300;
+}
+
+.acciones-tabla button.eliminar {
+    background-color: #f44336;
+    color: white;
+}
+
+.acciones-tabla button.eliminar:hover {
+    background-color: #d32f2f;
+}
+
+#boton-nuevo-equipo {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 1em 1.5em;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 1.5em;
+    transition: background-color 0.3s ease;
+}
+
+#boton-nuevo-equipo:hover {
+    background-color: #388e3c;
+}
+
+/* estilos de las estadísticas */
+.contenedor-estadisticas {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 2em;
+    border: 1px solid #b2ebf2;
+}
+
+.contenedor-estadisticas h2 {
+    color: #009688;
+    border-bottom-color: #009688;
+}
+
+.contenedor-estadisticas ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contenedor-estadisticas ul li {
+    margin-bottom: 0.7em;
+    color: #546e7a;
+}
+
+.contenedor-estadisticas p {
+    color: #546e7a;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.contenedor-estadisticas span {
+    font-weight: normal;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .contenedor {
+        width: 98%;
+        padding: 1em;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        padding: 1em;
+    }
+
+    header h1 {
+        margin-bottom: 0.5em;
+    }
+
+    .contenedor-tabla .filtros {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contenedor-tabla .filtros label {
+        margin-bottom: 0.3em;
+    }
+
+    .contenedor-tabla .filtros select,
+    .contenedor-tabla .filtros input[type="text"] {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .campo-formulario label {
+        font-size: 0.95em;
+    }
+
+    .campo-formulario input[type="text"],
+    .campo-formulario input[type="number"],
+    .campo-formulario input[type="url"],
+    .campo-formulario select {
+        font-size: 0.95em;
+        padding: 0.6em;
+    }
+
+    .botones-formulario {
+        flex-direction: column;
+    }
+
+    .botones-formulario button {
+        font-size: 1em;
+        padding: 0.8em 1.2em;
+        margin-bottom: 0.5em;
+        width: 100%;
+    }
+
+    #tabla-equipos {
+        font-size: 0.9em;
+    }
+
+    #tabla-equipos th,
+    #tabla-equipos td {
+        padding: 0.7em;
+    }
+
+    .acciones-tabla button {
+        font-size: 0.9em;
+        padding: 0.5em 0.8em;
+        margin-bottom: 0.3em;
+        width: auto;
+    }
+
+    #boton-nuevo-equipo {
+        font-size: 1em;
+        padding: 0.8em 1.2em;
+        margin-top: 1em;
+        width: 100%;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #263238;
+    color: #eceff1;
+    margin-top: 3em;
+    font-size: 0.9em;
+}
